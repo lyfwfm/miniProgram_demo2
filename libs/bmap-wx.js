@@ -83,10 +83,27 @@ class BMapWX{
                 id:i,
                 latitude:poiArr[i]["location"]["lat"],
                 longitude:poiArr[i]["location"]["lng"],
-                title:poiArr[i]["name"]
+                title:poiArr[i]["name"],
+                iconPath:otherparam["iconPath"],
+                iconTapPath:otherparam["iconTapPath"],
+                address:poiArr[i]["address"],
+                telephone:poiArr[i]["telephone"],
+                alpha:otherparam["alpha"],
+                width:otherparam["width"],
+                height:otherparam["height"]
               }
             }
+            otherparam.success(outputRes);
           }
+          else {
+            otherparam.fail({
+              errMsg:res["message"],
+              statusCode:res["status"]
+            });
+          }
+        },
+        fail(data){
+          otherparam.fail(data)
         }
       })
     }
