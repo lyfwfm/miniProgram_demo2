@@ -1,18 +1,29 @@
-// pages/map/map.js
+//引用百度地图微信小程序jsapi模块
+var bmap=require('../../libs/bmap-wx.js');
+var wxMarkerData=[];
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+	  markers:[],
+	  latitude:'',
+	  longitude:'',
+	  placeData:{title:'点击图上marker获取详细信息'},
+	  searchMethod:'酒店',
+	  bitmap:'',
+	  fail:'',
+	  success:'',
+	  selsectState:[1,0,0]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+		var that=this;
+		//新建百度地图对象
   },
 
   /**
